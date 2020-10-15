@@ -19,7 +19,7 @@ view: events {
         platform,
         progname,
         app_id,
-        joined_at,
+        logged_at as joined_at,
       FROM
         `new_user_logs`
     ),
@@ -31,15 +31,15 @@ view: events {
       FROM
         `sales_logs`
       GROUP BY 1, 2
-    ),
+    )
 
     SELECT DISTINCT
-      CAST(logged_date AS TIMESTAMP) AS logged_at,
+      CAST(users.logged_date AS TIMESTAMP) AS logged_at,
       users.requester_id AS requester_id,
-      user.progname AS progname,
-      user.platform AS platform,
-      user.app_id AS app_id,
-      user.joined_at AS joined_at,
+      users.progname AS progname,
+      users.platform AS platform,
+      users.app_id AS app_id,
+      users.joined_at AS joined_at,
       sales.pay_amount_jpy_sum AS pay_amount_jpy_sum,
     FROM
       users
