@@ -135,7 +135,7 @@
     fields: [events.total_revenue]
     filters: {}
     limit: 500
-    query_timezone: Japan/Tokyo
+    query_timezone: Asia/Tokyo
     note_state: collapsed
     note_display: hover
     note_text: Total revenue (In-app Purhcases + Ad)
@@ -158,7 +158,7 @@
     fields: [events.average_revenue_per_spender]
     filters: {}
     limit: 500
-    query_timezone: Japan/Tokyo
+    query_timezone: Asia/Tokyo
     note_state: collapsed
     note_display: hover
     note_text: |-
@@ -248,7 +248,7 @@
     filters:
       events.install_group: paid
     limit: 500
-    query_timezone: Japan/Tokyo
+    query_timezone: Asia/Tokyo
     note_state: collapsed
     note_display: hover
     note_text: |-
@@ -274,7 +274,7 @@
     fields: [events.total_install_spend]
     filters: {}
     limit: 500
-    query_timezone: Japan/Tokyo
+    query_timezone: Asia/Tokyo
     hidden_fields: []
     y_axes: []
     note_state: collapsed
@@ -999,7 +999,7 @@
     fields: [events.percent_spenders]
     filters: {}
     limit: 500
-    query_timezone: Japan/Tokyo
+    query_timezone: Asia/Tokyo
     series_types: {}
     up_color: "#2196F3"
     down_color: "#03d7f4"
@@ -1023,7 +1023,7 @@
     fields: [events.total_iap_revenue, events.total_ad_revenue]
     filters: {}
     limit: 500
-    query_timezone: Japan/Tokyo
+    query_timezone: Asia/Tokyo
     color_application:
       collection_id: 611da387-0e33-4239-aef0-a187c149cf88
       palette_id: f31efe28-e698-428c-8420-fcb37f2010aa
