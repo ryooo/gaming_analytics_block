@@ -20,9 +20,8 @@ view: sales {
   }
 
   dimension_group: logged {
-    type: time
+    type: date
     timeframes: [
-      time,
       date,
       week,
       month,
