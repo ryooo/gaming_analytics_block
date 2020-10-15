@@ -3,7 +3,7 @@ view: events {
   extends: [raw_events]
 
 # Configured fields from manifest file:
-dimension_group: event { type:time sql: ${TABLE}.logged_date ;;}
+dimension_group: event { type:time sql: ${TABLE}.logged_at ;;}
 dimension: user_id { type:string sql: ${TABLE}.requester_id ;; }
 dimension: event_name { type:string sql: ${TABLE}.progname ;; }
 dimension: country { type: string sql: null ;;}

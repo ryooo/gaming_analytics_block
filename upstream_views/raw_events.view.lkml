@@ -40,7 +40,7 @@ view: raw_events {
     ),
 
     SELECT DISTINCT
-      CAST(logged_date AS TIMESTAMP) AS logged_date,
+      CAST(logged_date AS TIMESTAMP) AS logged_at,
       users.requester_id AS requester_id,
       user.progname AS progname,
       user.platform AS platform,
@@ -53,13 +53,6 @@ view: raw_events {
       ON users.requester_id = sales.requester_id
       AND users.logged_date = sales.logged_date
     ;;
-  }
-
-  dimension: logged_date {
-    label: "ログイン日"
-    type: date
-    sql: ${TABLE}.logged_date ;;
-    convert_tz: no
   }
 
   dimension: country {

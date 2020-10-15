@@ -3,9 +3,9 @@
 #   value: "`daily_user_logs`"
 # }
 # ## When did the event occour?
-# constant: timestamp_field {
-#   value: "logged_at"
-# }
+constant: timestamp_field {
+  value: "logged_at"
+}
 # 
 # ## What country was the event fired from?
 # constant: country_field {
