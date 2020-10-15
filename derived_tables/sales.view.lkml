@@ -32,6 +32,16 @@ view: sales {
     sql: ${TABLE}.logged_on ;;
   }
 
+  dimension: sum_amount_jpy {
+    type: number
+    sql: ${TABLE}.sum_amount_jpy ;;
+  }
+
+  dimension: amount_count {
+    type: number
+    sql: ${TABLE}.amount_count ;;
+  }
+
   filter: event_time {
     type: date_time
   }
