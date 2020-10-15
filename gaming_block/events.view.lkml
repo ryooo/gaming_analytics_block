@@ -12,7 +12,7 @@ dimension: device_platform { type: string sql: ${TABLE}.@{platform_field} ;; }
 dimension: game_version { type: string sql: ${TABLE}.@{version_field} ;; }
 dimension: game_name { type: string sql: ${TABLE}.@{game_name_field} ;; }
 dimension: acquisition_cost { type:number description: "ユーザー獲得にかかったコスト" sql: ${TABLE}.@{acquisition_cost_field} ;;}
-dimension: iap_revenue { type:number description: "課金額" sql: sales.sum_amount_jpy ;;}
+dimension: iap_revenue { type:number description: "課金額" sql: sales.pay_amount_jpy_sum ;;}
 dimension: ad_revenue { type:number description: "-" sql: ${TABLE}.@{ad_revenue_field} ;;}
 
 # Drill Selector
