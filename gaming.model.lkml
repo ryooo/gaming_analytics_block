@@ -24,7 +24,7 @@ explore: events {
     type: left_outer
     relationship: many_to_one
     sql_on: ${events.user_id} = ${sales.requester_id}
-          AND ${events.event_date} = ${sales.logged_date} ;;
+          AND ${events.event_date} = ${sales.logged_on} ;;
   }
 
   join: sessions {
