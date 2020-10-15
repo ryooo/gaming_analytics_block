@@ -645,7 +645,7 @@ measure: total_iap_revenue {
     group_label: "User Fact Table"
     description: "Not for direct use, use for NDT"
     type: date_time
-    sql: min(${event_raw}) ;;
+    sql: min(${TABLE}.joined_at) ;;
   }
 
   measure: player_last_seen {
