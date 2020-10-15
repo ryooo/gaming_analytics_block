@@ -20,9 +20,4 @@ view: raw_events {
     type: number
     sql: null ;;
   }
-
-  dimension: iap_revenue {
-    type: number
-    sql: sum(sales.sum_amount_jpy) ;;
-  }
 }

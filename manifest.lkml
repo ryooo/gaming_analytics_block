@@ -47,9 +47,3 @@ constant: acquisition_cost_field {
 constant: ad_revenue_field {
   value: "ad_revenue"
 }
-
-
-## What is name of the event field (i.e. start_match)?
-constant: iap_revenue_field {
-  value: "iap_revenue"
-}
