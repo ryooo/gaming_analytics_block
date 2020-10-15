@@ -13,7 +13,7 @@ view: events {
       FROM
         `daily_user_logs`
       WHERE
-        {% condition logged %} logged_at {% endcondition %}
+        {% condition event_date %} logged_at {% endcondition %}
       UNION ALL
       SELECT
         CAST(TIMESTAMP(FORMAT_TIMESTAMP('%F %H:%M:%E*S', logged_at , 'Asia/Tokyo')) AS DATE) AS logged_date,
@@ -25,7 +25,7 @@ view: events {
       FROM
         `new_user_logs`
       WHERE
-        {% condition logged %} logged_at {% endcondition %}
+        {% condition event_date %} logged_at {% endcondition %}
     ),
     sales AS (
       SELECT
@@ -35,7 +35,7 @@ view: events {
       FROM
         `sales_logs`
       WHERE
-        {% condition logged %} logged_at {% endcondition %}
+        {% condition event_date %} logged_at {% endcondition %}
       GROUP BY 1, 2
     ),
 
