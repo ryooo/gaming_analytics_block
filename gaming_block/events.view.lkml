@@ -12,8 +12,6 @@ view: events {
         joined_at,
       FROM
         `daily_user_logs`
-      WHERE
-        {% condition event_date %} logged_at {% endcondition %}
       UNION ALL
       SELECT
         CAST(TIMESTAMP(FORMAT_TIMESTAMP('%F %H:%M:%E*S', logged_at , 'Asia/Tokyo')) AS DATE) AS logged_date,
@@ -24,8 +22,6 @@ view: events {
         joined_at,
       FROM
         `new_user_logs`
-      WHERE
-        {% condition event_date %} logged_at {% endcondition %}
     ),
     sales AS (
       SELECT
@@ -34,8 +30,6 @@ view: events {
         SUM(pay_amount_jpy) AS pay_amount_jpy_sum,
       FROM
         `sales_logs`
-      WHERE
-        {% condition event_date %} logged_at {% endcondition %}
       GROUP BY 1, 2
     ),
 
