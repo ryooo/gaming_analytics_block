@@ -9,7 +9,7 @@ view: sales {
         count(sales.request_id) AS amount_count
       FROM
         sales_logs AS sales
-      WHERE {% condition event_time %} logged_at {% endcondition %} %}
+      WHERE {% condition event_time %} logged_at {% endcondition %}
       GROUP BY 1,2
        ;;
   }
