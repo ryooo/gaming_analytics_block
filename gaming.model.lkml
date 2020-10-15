@@ -22,7 +22,7 @@ explore: events {
 
   join: sales {
     type: left_outer
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${events.user_id} = ${sales.requester_id}
           AND ${events.event_date} = ${sales.logged_date} ;;
   }
