@@ -40,6 +40,7 @@ view: events {
       users.platform AS platform,
       users.app_id AS app_id,
       users.joined_at AS joined_at,
+      'organic' AS install_source,
       sales.pay_amount_jpy_sum AS pay_amount_jpy_sum,
     FROM
       users
