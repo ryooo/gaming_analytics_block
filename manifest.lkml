@@ -4,7 +4,7 @@ constant: events_table {
 }
 ## When did the event occour?
 constant: timestamp_field {
-  value: "event"
+  value: "logged"
 }
 
 ## What country was the event fired from?
@@ -14,32 +14,32 @@ constant: country_field {
 
 ## is as the device's platform?
 constant: platform_field {
-  value: "device_platform"
+  value: "platform"
 }
 
 ## What is the game version?
 constant: version_field {
-  value: "game_version"
+  value: "version"
 }
 
 ## What is the game name field? (for schemas with multiple fields)
 constant: game_name_field {
-  value: "game_name"
+  value: "app_id"
 }
 
 ## What is the user/player ID field?
 constant: user_id_field {
-  value: "user_id"
+  value: "requester_id"
 }
 
 ## What is name of the event field (i.e. start_match)?
 constant: event_name_field {
-  value: "event_name"
+  value: "progname"
 }
 
 ## What is name of the acquisition cost field?
 constant: acquisition_cost_field {
-  value: "install_cost"
+  value: "acquisition_cost"
 }
 
 
