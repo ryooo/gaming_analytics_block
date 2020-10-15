@@ -19,15 +19,8 @@ view: sales {
     sql: ${TABLE}.requester_id ;;
   }
 
-  dimension_group: logged {
-    type: time
-    timeframes: [
-      date,
-      week,
-      month,
-      year,
-      raw
-    ]
+  dimension: logged_on {
+    type: string
     sql: ${TABLE}.logged_on ;;
   }
 
