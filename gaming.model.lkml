@@ -24,7 +24,7 @@ explore: events {
     type: left_outer
     relationship: one_to_many
     sql_on: ${events.user_id} = ${sales.requester_id}
-          AND CAST(TIMESTAMP(FORMAT_TIMESTAMP('%F %H:%M:%E*S', ${events.logged_at} , 'Japan')) AS DATE) = ${sales.logged_on} ;;
+          AND ${events.event_date} = ${sales.logged_on} ;;
   }
 
   join: sessions {
