@@ -23,6 +23,6 @@ view: raw_events {
 
   dimension: iap_revenue {
     type: number
-    sql: sum(sales_logs.pay_amount_jpy) ;;
+    sql: sum(sales.sum_amount_jpy) ;;
   }
 }

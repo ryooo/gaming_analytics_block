@@ -5,7 +5,7 @@ view: sales {
   derived_table: {
     sql: SELECT sales.requester_id as requester_id,
         CAST(TIMESTAMP(FORMAT_TIMESTAMP('%F %H:%M:%E*S', sales.logged_at , 'Japan')) AS DATE) AS logged_on,
-        sum(sales.pay_amount_jpy) AS amount_jpy,
+        sum(sales.pay_amount_jpy) AS sum_amount_jpy,
         count(sales.request_id) AS amount_count
       FROM
         sales_logs AS sales
