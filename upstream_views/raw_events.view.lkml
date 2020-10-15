@@ -12,17 +12,17 @@ view: raw_events {
   }
 
   dimension: acquisition_cost {
-    type: int
+    type: number
     sql: null ;;
   }
 
   dimension: ad_revenue {
-    type: int
+    type: number
     sql: null ;;
   }
 
   dimension: iap_revenue {
-    type: int
+    type: number
     sql: null ;;
   }
 }
