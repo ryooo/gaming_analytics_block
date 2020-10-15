@@ -44,7 +44,7 @@ explore: funnel_explorer {
     }
     filters: {
       field: game_name
-      value: "Lookerwood Farm"
+      value: "chouchou_prod_clog"
     }
   }
 
