@@ -20,13 +20,6 @@ explore: events {
     }
   }
 
-  join: sales {
-    type: left_outer
-    relationship: many_to_one
-    sql_on: ${events.user_id} = ${sales.requester_id}
-          AND ${events.event_date} = ${sales.logged_date} ;;
-  }
-
   join: sessions {
     sql_on: ${events.user_id} = ${sessions.user_id}
           AND ${events.event_raw} >= ${sessions.session_start_raw}

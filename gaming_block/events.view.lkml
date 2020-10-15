@@ -1,28 +1,24 @@
 include: "/upstream_views/raw_events.view.lkml"
 view: events {
-  sql_table_name: @{events_table} ;;
   extends: [raw_events]
 
 # Configured fields from manifest file:
-dimension_group: event { type:time sql: ${TABLE}.@{timestamp_field} ;;}
-dimension: user_id { type:string sql: ${TABLE}.@{user_id_field} ;; }
-dimension: event_name { type:string sql: ${TABLE}.@{event_name_field} ;; }
-dimension: country { type: string sql: ${TABLE}.@{country_field} ;;}
-dimension: device_platform { type: string sql: ${TABLE}.@{platform_field} ;; }
-dimension: game_version { type: string sql: ${TABLE}.@{version_field} ;; }
-dimension: game_name { type: string sql: ${TABLE}.@{game_name_field} ;; }
-dimension: acquisition_cost { type:number description: "ユーザー獲得にかかったコスト" sql: ${TABLE}.@{acquisition_cost_field} ;;}
-dimension: iap_revenue { type:number description: "課金額" sql: sales.pay_amount_jpy_sum ;;}
-dimension: ad_revenue { type:number description: "-" sql: ${TABLE}.@{ad_revenue_field} ;;}
+dimension_group: event { type:time sql: ${TABLE}.logged_date ;;}
+dimension: user_id { type:string sql: ${TABLE}.requester_id ;; }
+dimension: event_name { type:string sql: ${TABLE}.progname ;; }
+dimension: country { type: string sql: null ;;}
+dimension: device_platform { type: string sql: ${TABLE}.platform ;; }
+dimension: game_version { type: string sql: null ;; }
+dimension: game_name { type: string sql: ${TABLE}.app_id ;; }
+dimension: acquisition_cost { type:number description: "ユーザー獲得にかかったコスト" sql: 0 ;;}
+dimension: iap_revenue { type:number description: "課金額" sql: ${TABLE}.pay_amount_jpy_sum ;;}
+dimension: ad_revenue { type:number description: "-" sql: 0 ;;}
 
 # Drill Selector
 parameter: drill_by {
   type: string
   default_value: "device_platform"
-  allowed_value: { label: "Country" value: "country" }
   allowed_value: { label: "Platform" value: "device_platform" }
-  allowed_value: { label: "Game" value: "game_name" }
-  allowed_value: { label: "Game Version" value: "game_version" }
   allowed_value: { label: "Install Source" value: "install_source" }
 }
 
