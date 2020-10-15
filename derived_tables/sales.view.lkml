@@ -20,7 +20,7 @@ view: sales {
   }
 
   dimension: logged_on {
-    type: string
+    type: date
     sql: ${TABLE}.logged_on ;;
   }
 
