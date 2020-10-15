@@ -1,10 +1,10 @@
 ## What table houses your events?
 constant: events_table {
-  value: "`se-pbl.gaming_demo_dev.raw_events`"
+  value: "`daily_user_logs`"
 }
 ## When did the event occour?
 constant: timestamp_field {
-  value: "logged"
+  value: "logged_at"
 }
 
 ## What country was the event fired from?
