@@ -1,5 +1,5 @@
 - dashboard: daily_pulse
-  title: Daily Pulse
+  title: 日次KPI
   layout: newspaper
   elements:
   - title: New Tile
@@ -44,8 +44,8 @@
     point_style: none
     series_colors: {}
     series_labels:
-      events.number_of_users: Active Users
-      events.number_of_new_users: New Installs
+      events.number_of_users: アクティブ
+      events.number_of_new_users: インストール
     show_value_labels: false
     label_density: 25
     x_axis_scale: auto
@@ -65,7 +65,7 @@
     col: 4
     width: 4
     height: 7
-  - title: Daily Active Users
+  - title: DAU
     name: Daily Active Users
     model: gaming
     explore: events
@@ -80,8 +80,7 @@
         value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
     note_state: collapsed
     note_display: hover
-    note_text: The average number of unique users per day who played at least one
-      session in the selected time period
+    note_text: 昨日1日のDAU
     listen:
       Date Range: events.event_date
       Drill Down: events.drill_by
@@ -93,37 +92,37 @@
     col: 0
     width: 4
     height: 4
-  - name: "<span class='fa fa-tachometer'> Topline KPIs</span>"
+  - name: "<span class='fa fa-tachometer'> 主要 KPIs</span>"
     type: text
-    title_text: "<span class='fa fa-tachometer'> Topline KPIs</span>"
-    subtitle_text: Are we headed in the right direction?
+    title_text: "<span class='fa fa-tachometer'> 主要 KPIs</span>"
+    subtitle_text: エリオスライジングヒーローズ
     body_text: ''
     row: 0
     col: 0
     width: 24
     height: 2
-  - name: "<span class='fa fa-smile-o'> Retention </span>"
+  - name: "<span class='fa fa-smile-o'> 継続率 </span>"
     type: text
-    title_text: "<span class='fa fa-smile-o'> Retention </span>"
-    subtitle_text: Are our games fun?
+    title_text: "<span class='fa fa-smile-o'> 継続率 </span>"
+    subtitle_text: 愛され続ける♡
     row: 18
     col: 0
     width: 24
     height: 2
-  - name: "<span class='fa fa-users'> User Acquistion </span>"
+  - name: "<span class='fa fa-users'> ユーザー獲得 </span>"
     type: text
-    title_text: "<span class='fa fa-users'> User Acquistion </span>"
-    subtitle_text: Are we acquiring players from the best places?
+    title_text: "<span class='fa fa-users'> ユーザー獲得 </span>"
+    subtitle_text: 新しいファンはどれくらい生まれましたか？
     body_text: ''
     row: 9
     col: 0
     width: 24
     height: 2
-  - name: "<span class='fa fa-usd'> Monetization </span>"
+  - name: "<span class='fa fa-usd'> マネタイズ </span>"
     type: text
-    title_text: "<span class='fa fa-usd'> Monetization </span>"
-    subtitle_text: <p> Are we building a sustainable business? Go to <a href="/dashboards/100"
-      target="_blank">monetization dashboard</a></p>
+    title_text: "<span class='fa fa-usd'> マネタイズ </span>"
+    subtitle_text: <p> もっとみますか？ Go to <a href="/dashboards/gaming::game_monetization"
+      target="_blank">売上 ダッシュボード</a></p>
     row: 27
     col: 0
     width: 24
@@ -221,7 +220,7 @@
     point_style: none
     series_colors: {}
     series_labels:
-      events.number_of_users: Active Users
+      events.number_of_users: アクティブ
     show_value_labels: false
     label_density: 25
     x_axis_scale: auto
@@ -320,7 +319,7 @@
     point_style: none
     series_colors: {}
     series_labels:
-      events.number_of_users: Active Users
+      events.number_of_users: アクティブ
     series_types:
       events.average_revenue_per_paying_user: column
       events.return_on_ad_spend: column
@@ -407,10 +406,10 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      events.number_of_users: Active Users
-      events.d7_revenue_per_retained_user: D7 Revenue
-      events.number_of_new_users: Installs
-      events.total_install_spend: Spend
+      events.number_of_users: アクティブ
+      events.d7_revenue_per_retained_user: 7日継続率
+      events.number_of_new_users: インストール
+      events.total_install_spend: 課金
     table_theme: gray
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -693,10 +692,10 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      events.number_of_users: Active Users
-      events.d7_revenue_per_retained_user: D7 Revenue
-      events.number_of_new_users: Installs
-      events.total_install_spend: Spend
+      events.number_of_users: アクティブ
+      events.d7_revenue_per_retained_user: 7日継続率
+      events.number_of_new_users: インストール
+      events.total_install_spend: 課金
     table_theme: gray
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -1077,7 +1076,7 @@
     col: 16
     width: 8
     height: 6
-  - title: Daily Installs
+  - title: インストール
     name: Daily Installs
     model: gaming
     explore: events

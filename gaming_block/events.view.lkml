@@ -11,9 +11,9 @@ dimension: country { type: string sql: ${TABLE}.@{country_field} ;;}
 dimension: device_platform { type: string sql: ${TABLE}.@{platform_field} ;; }
 dimension: game_version { type: string sql: ${TABLE}.@{version_field} ;; }
 dimension: game_name { type: string sql: ${TABLE}.@{game_name_field} ;; }
-dimension: acquisition_cost { type:number description: "How much did this player cost to acquire?" sql: ${TABLE}.@{acquisition_cost_field} ;;}
-dimension: iap_revenue { type:number description: "Amount of $ paid for this purchase" sql: ${TABLE}.@{iap_revenue_field} ;;}
-dimension: ad_revenue { type:number description: "Amount of $ made by watching an ad" sql: ${TABLE}.@{ad_revenue_field} ;;}
+dimension: acquisition_cost { type:number description: "ユーザー獲得にかかったコスト" sql: ${TABLE}.@{acquisition_cost_field} ;;}
+dimension: iap_revenue { type:number description: "課金額" sql: ${TABLE}.@{iap_revenue_field} ;;}
+dimension: ad_revenue { type:number description: "-" sql: ${TABLE}.@{ad_revenue_field} ;;}
 
 
 
@@ -51,7 +51,7 @@ dimension: drill_field {
 
 # Dimensions
   dimension: install_group {
-    description: "Where did the user originate? (organic or paid)"
+    description: "獲得種別 (organic or paid)"
     type: string
     sql: CASE
             WHEN ${install_source} = 'organic' then 'organic'
@@ -66,7 +66,7 @@ dimension: drill_field {
 
   dimension: campaign_name {
     link: {
-      label: "Manage this campaign in {{ events.install_source._value }}"
+      label: "キャンペーン名: {{ events.install_source._value }}"
       url: "http://{{events.install_source._value}}/manage/{{value}}"
     }
   }
@@ -85,7 +85,7 @@ dimension: drill_field {
 
   dimension: is_top_10_country {
     type: yesno
-    sql: ${country} in ('United States','Russia','Germany','Turkey','United Kingdom','Vietnam','France','Poland','Mexico','Brazil' ) ;;
+    sql: ${country} in ('Japan' ) ;;
   }
 
   dimension: is_first_session {
@@ -94,10 +94,10 @@ dimension: drill_field {
   }
 
 
-# User Counts
+# ユーザー数
 
   measure: number_of_users {
-    group_label: "User Counts"
+    group_label: "ユーザー数"
     type: count_distinct
     sql: ${user_id};;
     value_format_name: large_number
@@ -105,7 +105,7 @@ dimension: drill_field {
   }
 
   measure: number_of_new_users {
-    group_label: "User Counts"
+    group_label: "ユーザー数"
     description: "Start date = Play Date"
     type: count_distinct
     sql: ${user_id};;
@@ -118,8 +118,8 @@ dimension: drill_field {
   }
 
   measure: number_of_paid_users {
-    group_label: "User Counts"
-    label: "Number of non-organic users"
+    group_label: "ユーザー数"
+    label: "広告で獲得したユーザー数"
     type: count_distinct
     sql: ${user_id};;
     filters: {
@@ -132,18 +132,18 @@ dimension: drill_field {
 
 
 
-# Event Counts
+# イベント数
 
   measure: count {
-    group_label: "Event Counts"
-    label: "Number of Events"
+    group_label: "イベント数"
+    label: "イベント数"
     type: count
     value_format_name: large_number
     drill_fields: [drill_field,count]
   }
 
   measure: number_of_ads_shown {
-    group_label: "Event Counts"
+    group_label: "イベント数"
     type: count
     filters: {
       field: event_name
@@ -153,8 +153,8 @@ dimension: drill_field {
   }
 
   measure: ads_shown_per_user {
-    group_label: "Event Counts"
-    description: "No. of Ads Shown / Number of Users"
+    group_label: "イベント数"
+    description: "広告表示数/ユーザー"
     type: number
     value_format_name: decimal_2
     sql: 1.0 * ${number_of_ads_shown} / NULLIF(${number_of_users},0) ;;
@@ -164,23 +164,23 @@ dimension: drill_field {
 # Misc
 
   dimension_group: current {
-    description: "the time right now"
+    description: "現在時刻"
     type: time
     sql: CURRENT_TIMESTAMP() ;;
   }
 
   dimension: days_since_user_signup {
     type: number
-    description: "Days since first seen (from today)"
+    description: "継続日数 (from today)"
     sql:  DATE_DIFF(${current_date}, ${user_facts.player_first_seen_date}, DAY);;
   }
 
 
 
-# Retention
+# 継続率
 
   dimension: retention_day {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Days since first seen (from event date)"
     type:  number
     sql:  DATE_DIFF(${event_date}, ${user_facts.player_first_seen_date}, DAY);;
@@ -189,7 +189,7 @@ dimension: drill_field {
  # D1
 
   measure: d1_retained_users {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players that came back to play on day 1"
     type: count_distinct sql: ${user_id} ;;
     filters: {
@@ -201,7 +201,7 @@ dimension: drill_field {
 
   measure: d1_eligible_users {
     hidden: yes
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players older than 0 days"
     type: count_distinct
     sql: ${user_id} ;;
@@ -212,7 +212,7 @@ dimension: drill_field {
   }
 
   measure: d1_retention_rate {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "% of players (that are older than 0 days) that came back to play on day 1"
     value_format_name: percent_2
     type: number
@@ -223,7 +223,7 @@ dimension: drill_field {
   # D7
 
   measure: d7_retained_users {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players that came back to play on day 7"
     type: count_distinct sql: ${user_id} ;;
     filters: {
@@ -235,7 +235,7 @@ dimension: drill_field {
 
   measure: d7_eligible_users {
     hidden: yes
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players older than 7 days"
     type: count_distinct
     sql: ${user_id} ;;
@@ -247,7 +247,7 @@ dimension: drill_field {
   }
 
   measure: d7_retention_rate {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "% of players (that are older than 7 days) that came back to play on day 7"
     value_format_name: percent_2
     type: number
@@ -258,7 +258,7 @@ dimension: drill_field {
   # D14
 
   measure: d14_retained_users {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players that came back to play on day 14"
     type: count_distinct sql: ${user_id} ;;
     filters: {
@@ -270,7 +270,7 @@ dimension: drill_field {
 
   measure: d14_eligible_users {
     hidden: yes
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players older than 14 days"
     type: count_distinct
     sql: ${user_id} ;;
@@ -282,7 +282,7 @@ dimension: drill_field {
   }
 
   measure: d14_retention_rate {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "% of players (that are older than 14 days) that came back to play on day 14"
     value_format_name: percent_2
     type: number
@@ -293,7 +293,7 @@ dimension: drill_field {
   # D30
 
   measure: d30_retained_users {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players that came back to play on day 30"
     type: count_distinct sql: ${user_id} ;;
     filters: {
@@ -305,7 +305,7 @@ dimension: drill_field {
 
   measure: d30_eligible_users {
     hidden: yes
-    group_label: "Retention"
+    group_label: "継続率"
     description: "Number of players older than 30 days"
     type: count_distinct
     sql: ${user_id} ;;
@@ -317,7 +317,7 @@ dimension: drill_field {
   }
 
   measure: d30_retention_rate {
-    group_label: "Retention"
+    group_label: "継続率"
     description: "% of players (that are older than 30 days) that came back to play on day 30"
     value_format_name: percent_2
     type: number
@@ -329,28 +329,28 @@ dimension: drill_field {
 
   measure: cost_per_install {
     label: "CPI"
-    description: "Total install spend/number of new users"
-    group_label: "User Acquistion"
+    description: "広告消費額/獲得ユーザー数"
+    group_label: "ユーザー獲得"
     type: number
     sql: ${total_install_spend}/ NULLIF(${number_of_new_users},0) ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,cost_per_install]
   }
 
   measure: total_install_spend {
-    group_label: "User Acquistion"
-    description: "Total spent to acquire users"
+    group_label: "ユーザー獲得"
+    description: "広告消費額"
     type: sum
     sql: ${acquisition_cost} ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,total_install_spend]
   }
 
 
   measure: return_on_ad_spend {
-    group_label: "User Acquistion"
+    group_label: "ユーザー獲得"
     label: "ROAS"
-    description: "Revenue (from paid users) / Cost (to acquire those users) "
+    description: "収益 (from paid users) / 獲得コスト (to acquire those users) "
     type: number
     sql: 1.0 * ${total_revenue_from_paid_users} / NULLIF(${total_install_spend},0) ;;
     value_format_name: percent_2
@@ -367,30 +367,30 @@ dimension: drill_field {
 
 dimension: is_paying_user {
   type: yesno
-  description: "Had an IAP purhcase in selected time period"
+  description: "期間内に課金があったかどうか"
   sql: ${iap_revenue} > 0 ;;
 }
 
 dimension: is_iap_purchase {
   type: yesno
   hidden: yes
-  sql: ${event_name} = 'in_app_purchase' ;;
+  sql: ${event_name} = 'purchased_coins/purchase' ;;
 }
 
 dimension: iap_purchase_tier {
-  group_label: "Monetization"
-  label: "IAP Purchase Tier"
-  description: "How big was each purchase?"
+  group_label: "収益"
+  label: "課金量の区分"
+  description: "どれくらい課金してくださっているか"
   type: tier
   tiers: [0,10,20,30]
   sql: ${iap_revenue} ;;
   style: integer
-  value_format_name: usd_0
+  value_format_name: decimal_0
 }
 
 measure: number_of_iap_purchases {
-  group_label: "Monetization"
-  label: "Number of IAP Purchases"
+  group_label: "収益"
+  label: "課金回数"
   type: count
   filters: {
     field: is_iap_purchase
@@ -401,82 +401,82 @@ measure: number_of_iap_purchases {
 
 measure: transactions_per_spender {
   type: number
-  description: "For paying users, how many transactions do they make"
-  group_label: "Monetization"
+  description: "課金ユーザーあたりの購入回数"
+  group_label: "収益"
   sql: 1.0 * ${number_of_iap_purchases}/nullif(${number_of_spenders},0) ;;
   value_format_name: decimal_2
   drill_fields: [drill_field,transactions_per_spender]
 }
 
 measure: total_iap_revenue {
-  label: "Total IAP Revenue"
-  group_label: "Monetization"
-  description: "Total Revenue from In-App Purchases"
+  label: "収益合計"
+  group_label: "収益"
+  description: "課金収益の合計"
   type: sum
   sql: ${iap_revenue} ;;
-  value_format_name: large_usd
+  value_format_name: large_jpy
   drill_fields: [drill_field,total_iap_revenue]
 }
 
   measure: total_ad_revenue {
-    group_label: "Monetization"
-    description: "Total Revenue from Ads"
+    group_label: "収益"
+    description: "広告収益の合計"
     type: sum
     sql: ${ad_revenue} ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,total_ad_revenue]
   }
 
   dimension: combined_revenue {
     type: number
     sql: IFNULL(${iap_revenue},0) + IFNULL(${ad_revenue},0) ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
   }
 
   measure: total_revenue {
-    group_label: "Monetization"
+    group_label: "収益"
     description: "IAP + Ad Revenue"
     type: sum
     sql: ${combined_revenue} ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,total_revenue]
   }
 
   measure: total_revenue_after_UA {
-    label: "Total Revenue After UA"
-    group_label: "Monetization"
-    description: "Revenue - Marketing Spend"
+    label: "収益 - 広告費"
+    group_label: "収益"
+    description: "収益 - 広告費"
     type: number
     sql: ${total_revenue} - ${total_install_spend}  ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,total_revenue_after_UA]
   }
 
   measure: total_revenue_from_paid_users {
-      group_label: "Monetization"
-    description: "IAP + Ad Revenue (for users acquiried by marketing)"
+    group_label: "収益"
+    description: "広告獲得したユーザーからの収益"
     type: sum
     sql: ${combined_revenue} ;;
     filters: {
       field: install_group
       value: "paid"
     }
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,total_revenue]
   }
 
   measure: average_revenue {
-    group_label: "Monetization"
-    description: "IAP + Ad Revenue"
+    group_label: "収益"
+    description: "収益合計"
     type: average
     sql: ${combined_revenue} ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,average_revenue]
   }
 
   measure: number_of_spenders {
-    group_label: "Monetization"
-    description: "Number of users with IAP purchases"
+    group_label: "収益"
+    description: "課金ユーザー数"
     type: count_distinct
     sql: ${user_id} ;;
     filters: {
@@ -487,8 +487,8 @@ measure: total_iap_revenue {
   }
 
   measure: percent_spenders {
-    group_label: "Monetization"
-    description: "% of users with IAP purchases"
+    group_label: "収益"
+    description: "課金率"
     type: number
     sql: 1.0 * ${number_of_spenders} / NULLIF(${number_of_users},0) ;;
     value_format_name: percent_2
@@ -496,48 +496,48 @@ measure: total_iap_revenue {
   }
 
   measure: average_revenue_per_spender {
-    group_label: "Monetization"
+    group_label: "収益"
     label: "ARPPU (IAP)"
-    description: " Total Revenue / Number of IAP Paying Users"
+    description: " 収益合計 / 課金ユーザー数"
     type: number
     sql: 1.0 * ${total_iap_revenue} / NULLIF(${number_of_spenders},0) ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,average_revenue_per_spender]
   }
 
   measure: average_revenue_per_user {
-    group_label: "Monetization"
+    group_label: "収益"
     label: "ARPU"
-    description: "(Average revenue per user) = Total Revenue (IAP + Ad) / Total Number of Users"
+    description: "収益合計 / アクティブユーザー数"
     type: number
     sql: 1.0 * ${total_revenue} / NULLIF(${number_of_users},0) ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,average_revenue_per_user]
   }
 
   measure: average_ad_revenue_per_user {
-    group_label: "Monetization"
+    group_label: "収益"
     label: "ARPU - Ads"
-    description: "(Average revenue per user) = Ad Revenue / Total Number of Users"
+    description: "広告の収益合計 / アクティブユーザー数"
     type: number
     sql: 1.0 * ${total_ad_revenue} / NULLIF(${number_of_users},0) ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,average_revenue_per_user]
   }
 
   measure: average_iap_revenue_per_user {
-    group_label: "Monetization"
+    group_label: "収益"
     label: "ARPU - IAP"
-    description: "(Average revenue per user) = IAP Revenue / Total Number of Users"
+    description: "アプリ内課金の収益合計 / アクティブユーザー数"
     type: number
     sql: 1.0 * ${total_iap_revenue} / NULLIF(${number_of_users},0) ;;
-    value_format_name: large_usd
+    value_format_name: large_jpy
     drill_fields: [drill_field,average_revenue_per_user]
   }
 
   measure: total_d1_revenue {
-    group_label: "Monetization"
-    description: "Revenue (ads + IAP) on day 1"
+    group_label: "収益"
+    description: "インストール翌日までの課金額"
     type: sum
     sql: ${combined_revenue} ;;
     filters: {
@@ -549,21 +549,21 @@ measure: total_iap_revenue {
       value: ">0"
     }
     drill_fields: [drill_field,total_d1_revenue]
-    value_format_name: large_usd
+    value_format_name: large_jpy
   }
 
   measure: d1_revenue_per_retained_user {
-    group_label: "Monetization"
-    description: "Revenue per user (that are retained for 1 days)"
-    value_format_name: large_usd
+    group_label: "収益"
+    description: "インストール翌日までの課金額/人"
+    value_format_name: large_jpy
     type: number
     sql: 1.0 * ${total_d1_revenue}/ NULLIF(${d1_retained_users},0);;
     drill_fields: [drill_field,d1_revenue_per_retained_user]
   }
 
   measure: total_d7_revenue {
-    group_label: "Monetization"
-    description: "Revenue (ads + IAP) on day 7"
+    group_label: "収益"
+    description: "7日後までの課金額"
     type: sum
     sql: ${combined_revenue} ;;
     filters: {
@@ -575,21 +575,21 @@ measure: total_iap_revenue {
       value: ">7"
     }
     drill_fields: [drill_field,total_d7_revenue]
-    value_format_name: large_usd
+    value_format_name: large_jpy
   }
 
   measure: d7_revenue_per_retained_user {
-    group_label: "Monetization"
-    description: "Revenue per user (that are retained for 7 days)"
-    value_format_name: large_usd
+    group_label: "収益"
+    description: "7日後までの課金額/人"
+    value_format_name: large_jpy
     type: number
     sql: 1.0 * ${total_d7_revenue}/ NULLIF(${d7_retained_users},0);;
     drill_fields: [drill_field,d7_revenue_per_retained_user]
   }
 
   measure: total_d14_revenue {
-    group_label: "Monetization"
-    description: "Revenue (ads + IAP) on day 14"
+    group_label: "収益"
+    description: "14日後までの課金額"
     type: sum
     sql: ${combined_revenue} ;;
     filters: {
@@ -601,21 +601,21 @@ measure: total_iap_revenue {
       value: ">14"
     }
     drill_fields: [drill_field,total_d14_revenue]
-    value_format_name: large_usd
+    value_format_name: large_jpy
   }
 
   measure: d14_revenue_per_retained_user {
-    group_label: "Monetization"
-    description: "Revenue per user (that are retained for 14 days)"
-    value_format_name: large_usd
+    group_label: "収益"
+    description: "14日後までの課金額/人"
+    value_format_name: large_jpy
     type: number
     sql: 1.0 * ${total_d14_revenue}/ NULLIF(${d14_retained_users},0);;
     drill_fields: [drill_field,d14_revenue_per_retained_user]
   }
 
   measure: total_d30_revenue {
-    group_label: "Monetization"
-    description: "Revenue (ads + IAP) on day 30"
+    group_label: "収益"
+    description: "30日後までの課金額"
     type: sum
     sql: ${combined_revenue} ;;
     filters: {
@@ -627,13 +627,13 @@ measure: total_iap_revenue {
       value: ">30"
     }
     drill_fields: [drill_field,total_d30_revenue]
-    value_format_name: large_usd
+    value_format_name: large_jpy
   }
 
   measure: d30_revenue_per_retained_user {
-    group_label: "Monetization"
-    description: "Revenue per user (that are retained for 30 days)"
-    value_format_name: large_usd
+    group_label: "収益"
+    description: "30日後までの課金額/人"
+    value_format_name: large_jpy
     type: number
     sql: 1.0 * ${total_d30_revenue}/ NULLIF(${d30_retained_users},0);;
     drill_fields: [drill_field,d30_revenue_per_retained_user]
