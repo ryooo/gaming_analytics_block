@@ -31,4 +31,9 @@ view: sales {
     ]
     sql: ${TABLE}.logged_on ;;
   }
+
+  filter: event_time {
+    type: date_time
+  }
+
 }
