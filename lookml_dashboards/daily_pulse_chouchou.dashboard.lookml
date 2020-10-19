@@ -1,5 +1,5 @@
 - dashboard: kpi
-  title: 日次KPI
+  title: エリオスライジングヒーローズ 主要 KPI
   layout: newspaper
   preferred_viewer: dashboards
   elements:
