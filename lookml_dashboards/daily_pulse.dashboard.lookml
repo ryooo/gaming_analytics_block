@@ -1,5 +1,5 @@
 - dashboard: daily_pulse
-  title: 日次KPI
+  title: Daily Pulse
   layout: newspaper
   elements:
   - title: New Tile
@@ -44,8 +44,8 @@
     point_style: none
     series_colors: {}
     series_labels:
-      events.number_of_users: アクティブ
-      events.number_of_new_users: インストール
+      events.number_of_users: Active Users
+      events.number_of_new_users: New Installs
     show_value_labels: false
     label_density: 25
     x_axis_scale: auto
@@ -65,7 +65,7 @@
     col: 4
     width: 4
     height: 7
-  - title: DAU
+  - title: Daily Active Users
     name: Daily Active Users
     model: gaming
     explore: events
@@ -80,7 +80,8 @@
         value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
     note_state: collapsed
     note_display: hover
-    note_text: 昨日1日のDAU
+    note_text: The average number of unique users per day who played at least one
+      session in the selected time period
     listen:
       Date Range: events.event_date
       Drill Down: events.drill_by
@@ -92,37 +93,37 @@
     col: 0
     width: 4
     height: 4
-  - name: "<span class='fa fa-tachometer'> 主要 KPIs</span>"
+  - name: "<span class='fa fa-tachometer'> Topline KPIs</span>"
     type: text
-    title_text: "<span class='fa fa-tachometer'> 主要 KPIs</span>"
-    subtitle_text: エリオスライジングヒーローズ
+    title_text: "<span class='fa fa-tachometer'> Topline KPIs</span>"
+    subtitle_text: Are we headed in the right direction?
     body_text: ''
     row: 0
     col: 0
     width: 24
     height: 2
-  - name: "<span class='fa fa-smile-o'> 継続率 </span>"
+  - name: "<span class='fa fa-smile-o'> Retention </span>"
     type: text
-    title_text: "<span class='fa fa-smile-o'> 継続率 </span>"
-    subtitle_text: 愛され続ける♡
+    title_text: "<span class='fa fa-smile-o'> Retention </span>"
+    subtitle_text: Are our games fun?
     row: 18
     col: 0
     width: 24
     height: 2
-  - name: "<span class='fa fa-users'> ユーザー獲得 </span>"
+  - name: "<span class='fa fa-users'> User Acquistion </span>"
     type: text
-    title_text: "<span class='fa fa-users'> ユーザー獲得 </span>"
-    subtitle_text: 新しいファンはどれくらい生まれましたか？
+    title_text: "<span class='fa fa-users'> User Acquistion </span>"
+    subtitle_text: Are we acquiring players from the best places?
     body_text: ''
     row: 9
     col: 0
     width: 24
     height: 2
-  - name: "<span class='fa fa-usd'> マネタイズ </span>"
+  - name: "<span class='fa fa-usd'> Monetization </span>"
     type: text
-    title_text: "<span class='fa fa-usd'> マネタイズ </span>"
-    subtitle_text: <p> もっとみますか？ Go to <a href="/dashboards/gaming::game_monetization"
-      target="_blank">売上 ダッシュボード</a></p>
+    title_text: "<span class='fa fa-usd'> Monetization </span>"
+    subtitle_text: <p> Are we building a sustainable business? Go to <a href="/dashboards/100"
+      target="_blank">monetization dashboard</a></p>
     row: 27
     col: 0
     width: 24
@@ -135,7 +136,7 @@
     fields: [events.total_revenue]
     filters: {}
     limit: 500
-    query_timezone: Asia/Tokyo
+    query_timezone: America/Los_Angeles
     note_state: collapsed
     note_display: hover
     note_text: Total revenue (In-app Purhcases + Ad)
@@ -158,7 +159,7 @@
     fields: [events.average_revenue_per_spender]
     filters: {}
     limit: 500
-    query_timezone: Asia/Tokyo
+    query_timezone: America/Los_Angeles
     note_state: collapsed
     note_display: hover
     note_text: |-
@@ -220,7 +221,7 @@
     point_style: none
     series_colors: {}
     series_labels:
-      events.number_of_users: アクティブ
+      events.number_of_users: Active Users
     show_value_labels: false
     label_density: 25
     x_axis_scale: auto
@@ -248,7 +249,7 @@
     filters:
       events.install_group: paid
     limit: 500
-    query_timezone: Asia/Tokyo
+    query_timezone: America/Los_Angeles
     note_state: collapsed
     note_display: hover
     note_text: |-
@@ -274,7 +275,7 @@
     fields: [events.total_install_spend]
     filters: {}
     limit: 500
-    query_timezone: Asia/Tokyo
+    query_timezone: America/Los_Angeles
     hidden_fields: []
     y_axes: []
     note_state: collapsed
@@ -319,7 +320,7 @@
     point_style: none
     series_colors: {}
     series_labels:
-      events.number_of_users: アクティブ
+      events.number_of_users: Active Users
     series_types:
       events.average_revenue_per_paying_user: column
       events.return_on_ad_spend: column
@@ -406,10 +407,10 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      events.number_of_users: アクティブ
-      events.d7_revenue_per_retained_user: 7日継続率
-      events.number_of_new_users: インストール
-      events.total_install_spend: 課金
+      events.number_of_users: Active Users
+      events.d7_revenue_per_retained_user: D7 Revenue
+      events.number_of_new_users: Installs
+      events.total_install_spend: Spend
     table_theme: gray
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -692,10 +693,10 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      events.number_of_users: アクティブ
-      events.d7_revenue_per_retained_user: 7日継続率
-      events.number_of_new_users: インストール
-      events.total_install_spend: 課金
+      events.number_of_users: Active Users
+      events.d7_revenue_per_retained_user: D7 Revenue
+      events.number_of_new_users: Installs
+      events.total_install_spend: Spend
     table_theme: gray
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -999,7 +1000,7 @@
     fields: [events.percent_spenders]
     filters: {}
     limit: 500
-    query_timezone: Asia/Tokyo
+    query_timezone: America/Los_Angeles
     series_types: {}
     up_color: "#2196F3"
     down_color: "#03d7f4"
@@ -1023,7 +1024,7 @@
     fields: [events.total_iap_revenue, events.total_ad_revenue]
     filters: {}
     limit: 500
-    query_timezone: Asia/Tokyo
+    query_timezone: America/Los_Angeles
     color_application:
       collection_id: 611da387-0e33-4239-aef0-a187c149cf88
       palette_id: f31efe28-e698-428c-8420-fcb37f2010aa
@@ -1076,7 +1077,7 @@
     col: 16
     width: 8
     height: 6
-  - title: インストール
+  - title: Daily Installs
     name: Daily Installs
     model: gaming
     explore: events
@@ -1104,768 +1105,9 @@
     col: 0
     width: 4
     height: 3
-  - name: シングルタイル-新規PU
-    title: シングルタイル-新規PU
-    model: chouchou_prod
-    explore: derived_sales_per_day_of_first_paid
-    type: single_value
-    fields: [derived_sales_per_day_of_first_paid.logged_date, derived_sales_per_day_of_first_paid.number_of_requester_id_firstpay]
-    fill_fields: [derived_sales_per_day_of_first_paid.logged_date]
-    filters:
-      derived_sales_per_day_of_first_paid.logged_date: 2 days ago for 2 days
-    sorts: [derived_sales_per_day_of_first_paid.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: npu, label: npu, expression: "${derived_sales_per_day_of_first_paid.number_of_requester_id_firstpay}",
-        value_format: '#,##0"人"', value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: 新規PU
-    comparison_label: "(前日)"
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    hidden_fields: [derived_sales_per_day_of_first_paid.logged_date, derived_sales_per_day_of_first_paid.number_of_requester_id_firstpay]
-    series_types: {}
-    y_axes: []
-    row: 6
-    col: 12
-    width: 6
-    height: 4
-  - name: シングルタイル-売上
-    title: シングルタイル-売上
-    model: chouchou_prod
-    explore: sales_logs
-    type: single_value
-    fields: [sales_logs.logged_date, sales_logs.pay_amount_jpy_sum]
-    fill_fields: [sales_logs.logged_date]
-    filters:
-      sales_logs.logged_date: 2 days ago for 2 days
-    sorts: [sales_logs.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: pay_amount, label: pay_amount, expression: "${sales_logs.pay_amount_jpy_sum}",
-        value_format: "\\¥#,##0", value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: 売上
-    comparison_label: "(前日)"
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    series_types: {}
-    hidden_fields: [sales_logs.pay_amount_jpy_sum, sales_logs.logged_date]
-    y_axes: []
-    row: 2
-    col: 0
-    width: 6
-    height: 4
-  - name: シングルタイル-当月売上
-    title: シングルタイル-当月売上
-    model: chouchou_prod
-    explore: sales_logs
-    type: single_value
-    fields: [sales_logs.logged_month, sales_logs.pay_amount_jpy_sum]
-    fill_fields: [sales_logs.logged_month]
-    filters:
-      sales_logs.logged_month: 2 months
-      sales_logs.logged_date: before 0 days ago
-    sorts: [sales_logs.logged_month desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: amount, label: amount, expression: "${sales_logs.pay_amount_jpy_sum}",
-        value_format: "\\¥#,##0", value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: 当月売上
-    comparison_label: "(前月)"
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    hidden_fields: [sales_logs.pay_amount_jpy_sum, sales_logs.logged_month]
-    series_types: {}
-    y_axes: []
-    row: 6
-    col: 0
-    width: 6
-    height: 4
-  - name: シングルタイル-PU
-    title: シングルタイル-PU
-    model: chouchou_prod
-    explore: sales_logs
-    type: single_value
-    fields: [sales_logs.logged_date, sales_logs.requester_count]
-    fill_fields: [sales_logs.logged_date]
-    filters:
-      sales_logs.logged_date: 2 days ago for 2 days
-    sorts: [sales_logs.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: pu, label: pu, expression: "${sales_logs.requester_count}",
-        value_format: '#,##0"人"', value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: PU
-    comparison_label: "(前日)"
-    conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3D52B9",
-        font_color: !!null '', color_application: {collection_id: 5591d8d1-6b49-4f8e-bafa-b874d82f8eb7,
-          palette_id: 97ce1e3f-9504-4d5c-835b-3fbaf78c084a}, bold: false, italic: false,
-        strikethrough: false, fields: !!null ''}]
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    series_types: {}
-    point_style: circle
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    x_axis_datetime_label: "%d"
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    defaults_version: 1
-    hidden_fields: [sales_logs.requester_count, sales_logs.logged_date]
-    y_axes: []
-    row: 2
-    col: 12
-    width: 6
-    height: 4
-  - name: シングルタイル-ARPPU
-    title: シングルタイル-ARPPU
-    model: chouchou_prod
-    explore: sales_logs
-    type: single_value
-    fields: [sales_logs.logged_date, sales_logs.arppu]
-    fill_fields: [sales_logs.logged_date]
-    filters:
-      sales_logs.logged_date: 2 days ago for 2 days
-    sorts: [sales_logs.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: arppu, label: arppu, expression: "${sales_logs.arppu}",
-        value_format: "\\¥#,##0", value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: ARPPU
-    comparison_label: "(前日)"
-    conditional_formatting: [{type: equal to, value: !!null '', background_color: "#3D52B9",
-        font_color: !!null '', color_application: {collection_id: 5591d8d1-6b49-4f8e-bafa-b874d82f8eb7,
-          palette_id: 97ce1e3f-9504-4d5c-835b-3fbaf78c084a}, bold: false, italic: false,
-        strikethrough: false, fields: !!null ''}]
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    defaults_version: 1
-    series_types: {}
-    hidden_fields: [sales_logs.arppu, sales_logs.logged_date]
-    y_axes: []
-    row: 2
-    col: 6
-    width: 6
-    height: 4
-  - name: シングルタイル-ARPU
-    title: シングルタイル-ARPU
-    model: chouchou_prod
-    explore: derived_arpu
-    type: single_value
-    fields: [derived_sales_per_day.logged_date, derived_sales_per_day.arpu]
-    fill_fields: [derived_sales_per_day.logged_date]
-    filters:
-      derived_sales_per_day.logged_date: 2 days ago for 2 days
-    sorts: [derived_sales_per_day.logged_date desc]
-    limit: 500
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: ARPU
-    comparison_label: "(前日)"
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    series_types: {}
-    hidden_fields: [derived_sales_per_day.logged_date]
-    y_axes: []
-    row: 6
-    col: 6
-    width: 6
-    height: 4
-  - name: シングルタイル-課金率
-    title: シングルタイル-課金率
-    model: chouchou_prod
-    explore: derived_billing_rate
-    type: single_value
-    fields: [derived_sales_per_day.logged_date, derived_sales_per_day.billing_rate]
-    fill_fields: [derived_sales_per_day.logged_date]
-    filters:
-      derived_sales_per_day.logged_date: 2 days ago for 2 days
-    sorts: [derived_sales_per_day.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: rate, label: rate, expression: "${derived_sales_per_day.billing_rate}",
-        value_format: 0.00%, value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: 課金率
-    comparison_label: "(前日)"
-    series_types: {}
-    defaults_version: 1
-    hidden_fields: [derived_sales_per_day.logged_date, derived_sales_per_day.billing_rate]
-    y_axes: []
-    row: 2
-    col: 18
-    width: 6
-    height: 4
-  - name: シングルタイル-DAU
-    title: シングルタイル-DAU
-    model: chouchou_prod
-    explore: derived_dau_per_day
-    type: single_value
-    fields: [derived_dau_per_day.logged_date, derived_dau_per_day.dau_count]
-    fill_fields: [derived_dau_per_day.logged_date]
-    filters:
-      derived_dau_per_day.logged: 2 days ago for 2 days
-    sorts: [derived_dau_per_day.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: dau, label: dau, expression: "${derived_dau_per_day.dau_count}",
-        value_format: '#,##0"人"', value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: DAU
-    comparison_label: "(前日)"
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    series_types: {}
-    hidden_fields: [derived_dau_per_day.dau_count, derived_dau_per_day.logged_date]
-    y_axes: []
-    row: 12
-    col: 0
-    width: 6
-    height: 4
-  - name: シングルタイル-DNU
-    title: シングルタイル-DNU
-    model: chouchou_prod
-    explore: new_user_logs
-    type: single_value
-    fields: [new_user_logs.logged_date, new_user_logs.requester_count]
-    fill_fields: [new_user_logs.logged_date]
-    filters:
-      new_user_logs.logged_date: 2 days ago for 2 days
-    sorts: [new_user_logs.logged_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: dnu, label: dnu, expression: "${new_user_logs.requester_count}",
-        value_format: '#,##0"人"', value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: DNU
-    comparison_label: "(前日)"
-    hidden_fields: [new_user_logs.requester_count, new_user_logs.logged_date]
-    series_types: {}
-    defaults_version: 1
-    y_axes: []
-    row: 12
-    col: 6
-    width: 6
-    height: 4
-  - name: シングルタイル-チュートリアル3クリア率
-    title: シングルタイル-チュートリアル3クリア率
-    model: chouchou_prod
-    explore: persistent_tutorial_clear_count_logs
-    type: single_value
-    fields: [persistent_tutorial_clear_count_logs.tutorial_3_clear_rate, persistent_tutorial_clear_count_logs.summary_date]
-    fill_fields: [persistent_tutorial_clear_count_logs.summary_date]
-    filters:
-      persistent_tutorial_clear_count_logs.summary_date: 2 days ago for 2 days
-    sorts: [persistent_tutorial_clear_count_logs.summary_date desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: rate_t3, label: rate_t3, expression: "${persistent_tutorial_clear_count_logs.tutorial_3_clear_rate}",
-        value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: チュートリアル3クリア率
-    comparison_label: "(前日)"
-    series_types: {}
-    defaults_version: 1
-    hidden_fields: [persistent_tutorial_clear_count_logs.tutorial_3_clear_rate, persistent_tutorial_clear_count_logs.summary_date]
-    y_axes: []
-    row: 12
-    col: 18
-    width: 6
-    height: 4
-  - name: "<span class='fa fa-user'> Users Trends</span>"
-    type: text
-    title_text: "<span class='fa fa-user'> Users Trends</span>"
-    body_text: ''
-    row: 10
-    col: 0
-    width: 24
-    height: 2
-  - name: "<span class='fa fa-file-text-o'> Sales Trends</span>"
-    type: text
-    title_text: "<span class='fa fa-file-text-o'> Sales Trends</span>"
-    body_text: ''
-    row: 0
-    col: 0
-    width: 24
-    height: 2
-  - name: "<span class='fa fa-file-text-o'> Sales</span>"
-    type: text
-    title_text: "<span class='fa fa-file-text-o'> Sales</span>"
-    row: 16
-    col: 0
-    width: 24
-    height: 2
-  - name: シングルタイル-MAU
-    title: シングルタイル-MAU
-    model: chouchou_prod
-    explore: derived_dau_users
-    type: single_value
-    fields: [derived_dau_users.dau_count, derived_dau_users.hidden_today_month]
-    fill_fields: [derived_dau_users.hidden_today_month]
-    filters:
-      derived_dau_users.hidden_today_date: before 0 days ago
-      derived_dau_users.hidden_today_month: 2 months
-    sorts: [derived_dau_users.hidden_today_month desc]
-    limit: 500
-    dynamic_fields: [{table_calculation: mau, label: MAU, expression: "${derived_dau_users.dau_count}",
-        value_format: '#,##0"人"', value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: progress_percentage
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    single_value_title: MAU
-    comparison_label: "(前月)"
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    defaults_version: 1
-    series_types: {}
-    hidden_fields: [derived_dau_users.hidden_today_month, derived_dau_users.dau_count]
-    y_axes: []
-    row: 12
-    col: 12
-    width: 6
-    height: 4
-  - name: 当月売上
-    title: 当月売上
-    model: chouchou_prod
-    explore: sales_logs
-    type: looker_column
-    fields: [sales_logs.logged_date, sales_logs.pay_amount_jpy_sum]
-    fill_fields: [sales_logs.logged_date]
-    filters:
-      sales_logs.logged_date: 30 days ago for 30 days
-    sorts: [sales_logs.logged_date]
-    limit: 500
-    dynamic_fields: [{table_calculation: 累計, label: 累計, expression: 'running_total(${sales_logs.pay_amount_jpy_sum})',
-        value_format: !!null '', value_format_name: !!null '', _kind_hint: measure,
-        _type_hint: number}]
-    query_timezone: Japan
-    x_axis_gridlines: true
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: circle
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: sales_logs.pay_amount_jpy_sum,
-            id: sales_logs.pay_amount_jpy_sum, name: 購入金額合計(日本円)}], showLabels: true,
-        showValues: true, unpinAxis: false, tickDensity: default, type: linear}, {
-        label: !!null '', orientation: right, series: [{axisId: 累計, id: 累計, name: 累計}],
-        showLabels: true, showValues: true, unpinAxis: false, tickDensity: default,
-        type: linear}]
-    series_types:
-      累計: line
-    x_axis_datetime_label: "%m/%d"
-    defaults_version: 1
-    hidden_fields: []
-    title_hidden: true
-    listen: {}
-    row: 18
-    col: 0
-    width: 24
-    height: 6
-  - name: "<span class='fa fa-user'> Users</span>"
-    type: text
-    title_text: "<span class='fa fa-user'> Users</span>"
-    row: 24
-    col: 0
-    width: 24
-    height: 2
-  - name: 過去30日 DNU
-    title: 過去30日 DNU
-    model: chouchou_prod
-    explore: new_user_logs
-    type: looker_line
-    fields: [new_user_logs.logged_date, new_user_logs.requester_count]
-    fill_fields: [new_user_logs.logged_date]
-    filters:
-      new_user_logs.logged_date: 30 days ago for 30 days
-    sorts: [new_user_logs.logged_date desc]
-    limit: 500
-    query_timezone: Japan
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: circle
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    series_types: {}
-    x_axis_datetime_label: "%m/%d"
-    defaults_version: 1
-    hidden_fields: []
-    y_axes: []
-    row: 26
-    col: 12
-    width: 12
-    height: 6
-  - name: 過去30日 DAU
-    title: 過去30日 DAU
-    model: chouchou_prod
-    explore: derived_dau_per_day
-    type: looker_line
-    fields: [derived_dau_per_day.dau_count, derived_dau_per_day.hidden_today_date]
-    fill_fields: [derived_dau_per_day.hidden_today_date]
-    filters:
-      derived_dau_per_day.hidden_today_date: 30 days ago for 30 days
-    sorts: [derived_dau_per_day.hidden_today_date]
-    limit: 500
-    query_timezone: Japan
-    x_axis_gridlines: true
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: circle
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    x_axis_datetime_label: "%m/%d"
-    defaults_version: 1
-    hidden_fields: []
-    row: 26
-    col: 0
-    width: 12
-    height: 6
-
   filters:
   - name: Date Range
-    title: 日付範囲
+    title: Date Range
     type: field_filter
     default_value: 30 days ago for 30 days
     allow_multiple_values: true
@@ -1874,8 +1116,18 @@
     explore: events
     listens_to_filters: []
     field: events.event_date
+  - name: Drill Down
+    title: Drill Down
+    type: field_filter
+    default_value: device^_platform
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.drill_by
   - name: Platform
-    title: プラットフォーム
+    title: Platform
     type: field_filter
     default_value: ''
     allow_multiple_values: true
@@ -1884,11 +1136,31 @@
     explore: events
     listens_to_filters: []
     field: events.device_platform
+  - name: Install Source
+    title: Install Source
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.install_source
+  - name: Country
+    title: Country
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.country
   - name: Game
     title: Game
     type: field_filter
-    default_value: chouchou_prod_clog
-    allow_multiple_values: false
+    default_value: Lookerwood Farm
+    allow_multiple_values: true
     required: false
     model: gaming
     explore: events
