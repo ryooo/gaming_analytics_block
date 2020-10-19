@@ -56,12 +56,8 @@
     interpolation: linear
     title_hidden: true
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 2
     col: 4
     width: 4
@@ -83,12 +79,8 @@
     note_display: hover
     note_text: 昨日1日のDAU
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 2
     col: 0
     width: 4
@@ -141,12 +133,8 @@
     note_display: hover
     note_text: Total revenue (In-app Purhcases + Ad)
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 2
     col: 8
     width: 4
@@ -166,12 +154,8 @@
       Average Revenue Per Paying User
       (Revenue / IAP Paying Users)
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 2
     col: 12
     width: 4
@@ -230,12 +214,8 @@
     interpolation: linear
     title_hidden: true
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 5
     col: 8
     width: 8
@@ -257,12 +237,8 @@
 
       NOTE: only counts revenue from paid users
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 2
     col: 20
     width: 4
@@ -282,12 +258,8 @@
     note_display: hover
     note_text: Return on Ad Spend (revenue/ad spend)
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 2
     col: 16
     width: 4
@@ -348,12 +320,8 @@
     hidden_fields: []
     title_hidden: true
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 5
     col: 16
     width: 8
@@ -372,12 +340,8 @@
     note_display: hover
     note_text: Cost per Install
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 11
     col: 0
     width: 4
@@ -455,12 +419,8 @@
     interpolation: linear
     title_hidden: true
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 11
     col: 10
     width: 14
@@ -516,12 +476,8 @@
     label_type: labPer
     inner_radius: 60
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 11
     col: 4
     width: 6
@@ -586,12 +542,8 @@
     inner_radius: 60
     hidden_fields: [events.number_of_new_users, events.number_of_users]
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 20
     col: 12
     width: 12
@@ -610,12 +562,8 @@
     note_display: hover
     note_text: D7 % = session on D7/ session on D0
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 23
     col: 0
     width: 4
@@ -634,12 +582,8 @@
     note_display: hover
     note_text: D1 % = session on D1/ session on D0
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 20
     col: 0
     width: 4
@@ -658,12 +602,8 @@
     note_display: hover
     note_text: D14 % = session on D14/ session on D0
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 25
     col: 0
     width: 4
@@ -741,12 +681,8 @@
     interpolation: linear
     title_hidden: true
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 14
     col: 10
     width: 14
@@ -820,12 +756,8 @@
     note_text: What percentage of users did we pay for (vs organic)?
     title_hidden: true
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 13
     col: 0
     width: 4
@@ -890,12 +822,8 @@
     inner_radius: 60
     hidden_fields: []
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 20
     col: 4
     width: 8
@@ -982,12 +910,8 @@
     note_display: hover
     note_text: How long does it take to make $1? (for all users)
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 29
     col: 0
     width: 12
@@ -1006,12 +930,8 @@
     down_color: "#03d7f4"
     total_color: "#00BCD4"
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 29
     col: 12
     width: 4
@@ -1067,12 +987,8 @@
     down_color: "#03d7f4"
     total_color: "#00BCD4"
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 29
     col: 16
     width: 8
@@ -1095,12 +1011,8 @@
     note_display: hover
     note_text: Average daily new players
     listen:
-      Date Range: events.event_date
-      Drill Down: events.drill_by
+      対象範囲: events.event_date
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
-      Game: events.game_name
     row: 6
     col: 0
     width: 4
