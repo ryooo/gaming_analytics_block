@@ -1,7 +1,6 @@
 - dashboard: daily_pulse
   title: 日次KPI
   layout: newspaper
-  preferred_viewer: dashboards
   elements:
   - title: New Tile
     name: New Tile
@@ -57,7 +56,11 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 2
     col: 4
     width: 4
@@ -80,7 +83,11 @@
     note_text: 昨日1日のDAU
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 2
     col: 0
     width: 4
@@ -134,7 +141,11 @@
     note_text: Total revenue (In-app Purhcases + Ad)
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 2
     col: 8
     width: 4
@@ -155,7 +166,11 @@
       (Revenue / IAP Paying Users)
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 2
     col: 12
     width: 4
@@ -215,7 +230,11 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 5
     col: 8
     width: 8
@@ -238,7 +257,11 @@
       NOTE: only counts revenue from paid users
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 2
     col: 20
     width: 4
@@ -259,7 +282,11 @@
     note_text: Return on Ad Spend (revenue/ad spend)
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 2
     col: 16
     width: 4
@@ -321,7 +348,11 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 5
     col: 16
     width: 8
@@ -341,7 +372,11 @@
     note_text: Cost per Install
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 11
     col: 0
     width: 4
@@ -420,7 +455,11 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 11
     col: 10
     width: 14
@@ -477,7 +516,11 @@
     inner_radius: 60
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 11
     col: 4
     width: 6
@@ -543,7 +586,11 @@
     hidden_fields: [events.number_of_new_users, events.number_of_users]
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 20
     col: 12
     width: 12
@@ -563,7 +610,11 @@
     note_text: D7 % = session on D7/ session on D0
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 23
     col: 0
     width: 4
@@ -583,7 +634,11 @@
     note_text: D1 % = session on D1/ session on D0
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 20
     col: 0
     width: 4
@@ -603,7 +658,11 @@
     note_text: D14 % = session on D14/ session on D0
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 25
     col: 0
     width: 4
@@ -682,7 +741,11 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 14
     col: 10
     width: 14
@@ -757,7 +820,11 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 13
     col: 0
     width: 4
@@ -823,7 +890,11 @@
     hidden_fields: []
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 20
     col: 4
     width: 8
@@ -911,7 +982,11 @@
     note_text: How long does it take to make $1? (for all users)
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 29
     col: 0
     width: 12
@@ -931,7 +1006,11 @@
     total_color: "#00BCD4"
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 29
     col: 12
     width: 4
@@ -988,7 +1067,11 @@
     total_color: "#00BCD4"
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 29
     col: 16
     width: 8
@@ -1012,73 +1095,15 @@
     note_text: Average daily new players
     listen:
       Date Range: events.event_date
+      Drill Down: events.drill_by
       Platform: events.device_platform
+      Install Source: events.install_source
+      Country: events.country
+      Game: events.game_name
     row: 6
     col: 0
     width: 4
     height: 3
-  filters:
-  - name: Date Range
-    title: Date Range
-    type: field_filter
-    default_value: 30 days ago for 30 days
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.event_date
-  - name: Drill Down
-    title: Drill Down
-    type: field_filter
-    default_value: device^_platform
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.drill_by
-  - name: Platform
-    title: Platform
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.device_platform
-  - name: Install Source
-    title: Install Source
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.install_source
-  - name: Country
-    title: Country
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.country
-  - name: Game
-    title: Game
-    type: field_filter
-    default_value: chouchou_prod_clog
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.game_name
-
   - name: シングルタイル-新規PU
     title: シングルタイル-新規PU
     model: chouchou_prod
@@ -1837,3 +1862,65 @@
     col: 0
     width: 12
     height: 6
+
+  filters:
+  - name: Date Range
+    title: Date Range
+    type: field_filter
+    default_value: 30 days ago for 30 days
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.event_date
+  - name: Drill Down
+    title: Drill Down
+    type: field_filter
+    default_value: device^_platform
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.drill_by
+  - name: Platform
+    title: Platform
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.device_platform
+  - name: Install Source
+    title: Install Source
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.install_source
+  - name: Country
+    title: Country
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.country
+  - name: Game
+    title: Game
+    type: field_filter
+    default_value: chouchou_prod_clog
+    allow_multiple_values: true
+    required: false
+    model: gaming
+    explore: events
+    listens_to_filters: []
+    field: events.game_name
