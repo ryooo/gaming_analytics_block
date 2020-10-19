@@ -1865,7 +1865,7 @@
 
   filters:
   - name: Date Range
-    title: Date Range
+    title: 日付範囲
     type: field_filter
     default_value: 30 days ago for 30 days
     allow_multiple_values: true
@@ -1874,18 +1874,8 @@
     explore: events
     listens_to_filters: []
     field: events.event_date
-  - name: Drill Down
-    title: Drill Down
-    type: field_filter
-    default_value: device^_platform
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.drill_by
   - name: Platform
-    title: Platform
+    title: プラットフォーム
     type: field_filter
     default_value: ''
     allow_multiple_values: true
@@ -1894,31 +1884,11 @@
     explore: events
     listens_to_filters: []
     field: events.device_platform
-  - name: Install Source
-    title: Install Source
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.install_source
-  - name: Country
-    title: Country
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    model: gaming
-    explore: events
-    listens_to_filters: []
-    field: events.country
   - name: Game
     title: Game
     type: field_filter
     default_value: chouchou_prod_clog
-    allow_multiple_values: true
+    allow_multiple_values: false
     required: false
     model: gaming
     explore: events
