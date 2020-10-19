@@ -1,8 +1,67 @@
 - dashboard: daily_pulse
   title: 日次KPI
   layout: newspaper
-  preferred_viewer: dashboards-next
+  preferred_viewer: dashboards
   elements:
+  - name: シングルタイル-新規PU
+    title: シングルタイル-新規PU
+    model: chouchou_prod
+    explore: derived_sales_per_day_of_first_paid
+    type: single_value
+    fields: [derived_sales_per_day_of_first_paid.logged_date, derived_sales_per_day_of_first_paid.number_of_requester_id_firstpay]
+    fill_fields: [derived_sales_per_day_of_first_paid.logged_date]
+    filters:
+      derived_sales_per_day_of_first_paid.logged_date: 2 days ago for 2 days
+    sorts: [derived_sales_per_day_of_first_paid.logged_date desc]
+    limit: 500
+    dynamic_fields: [{table_calculation: npu, label: npu, expression: "${derived_sales_per_day_of_first_paid.number_of_requester_id_firstpay}",
+        value_format: '#,##0"人"', value_format_name: !!null '', _kind_hint: measure,
+        _type_hint: number}]
+    query_timezone: Japan
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: progress_percentage
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    single_value_title: 新規PU
+    comparison_label: "(前日)"
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    show_null_points: true
+    interpolation: linear
+    defaults_version: 1
+    hidden_fields: [derived_sales_per_day_of_first_paid.logged_date, derived_sales_per_day_of_first_paid.number_of_requester_id_firstpay]
+    series_types: {}
+    y_axes: []
+    row: 6
+    col: 12
+    width: 6
+    height: 4
+
   - title: New Tile
     name: New Tile
     model: gaming
