@@ -614,10 +614,7 @@
     title_hidden: true
     listen:
       Date Range: events.event_date
-      Drill Down: events.drill_by
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
       Game: events.game_name
     row: 2
     col: 12
@@ -683,10 +680,7 @@
     defaults_version: 1
     listen:
       Date Range: events.event_date
-      Drill Down: events.drill_by
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
       Game: events.game_name
     row: 12
     col: 4
@@ -707,10 +701,7 @@
     note_text: D1 % = session on D1/ session on D0
     listen:
       Date Range: events.event_date
-      Drill Down: events.drill_by
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
       Game: events.game_name
     row: 12
     col: 0
@@ -731,10 +722,7 @@
     note_text: D7 % = session on D7/ session on D0
     listen:
       Date Range: events.event_date
-      Drill Down: events.drill_by
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
       Game: events.game_name
     row: 14
     col: 0
@@ -755,10 +743,7 @@
     note_text: D14 % = session on D14/ session on D0
     listen:
       Date Range: events.event_date
-      Drill Down: events.drill_by
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
       Game: events.game_name
     row: 16
     col: 0
@@ -779,10 +764,7 @@
     note_text: D14 % = session on D14/ session on D0
     listen:
       Date Range: events.event_date
-      Drill Down: events.drill_by
       Platform: events.device_platform
-      Install Source: events.install_source
-      Country: events.country
       Game: events.game_name
     row: 18
     col: 0
