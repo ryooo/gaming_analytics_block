@@ -115,7 +115,7 @@
     interpolation: linear
     title_hidden: true
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 2
     col: 4
@@ -138,7 +138,7 @@
     note_display: hover
     note_text: 昨日1日のDAU
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 2
     col: 0
@@ -192,7 +192,7 @@
     note_display: hover
     note_text: Total revenue (In-app Purhcases + Ad)
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 2
     col: 8
@@ -213,7 +213,7 @@
       Average Revenue Per Paying User
       (Revenue / IAP Paying Users)
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 2
     col: 12
@@ -273,7 +273,7 @@
     interpolation: linear
     title_hidden: true
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 5
     col: 8
@@ -296,7 +296,7 @@
 
       NOTE: only counts revenue from paid users
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 2
     col: 20
@@ -317,7 +317,7 @@
     note_display: hover
     note_text: Return on Ad Spend (revenue/ad spend)
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 2
     col: 16
@@ -379,7 +379,7 @@
     hidden_fields: []
     title_hidden: true
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 5
     col: 16
@@ -399,7 +399,7 @@
     note_display: hover
     note_text: Cost per Install
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 11
     col: 0
@@ -478,7 +478,7 @@
     interpolation: linear
     title_hidden: true
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 11
     col: 10
@@ -535,7 +535,7 @@
     label_type: labPer
     inner_radius: 60
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 11
     col: 4
@@ -601,7 +601,7 @@
     inner_radius: 60
     hidden_fields: [events.number_of_new_users, events.number_of_users]
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 20
     col: 12
@@ -621,7 +621,7 @@
     note_display: hover
     note_text: D7 % = session on D7/ session on D0
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 23
     col: 0
@@ -641,7 +641,7 @@
     note_display: hover
     note_text: D1 % = session on D1/ session on D0
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 20
     col: 0
@@ -661,7 +661,7 @@
     note_display: hover
     note_text: D14 % = session on D14/ session on D0
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 25
     col: 0
@@ -740,7 +740,7 @@
     interpolation: linear
     title_hidden: true
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 14
     col: 10
@@ -815,7 +815,7 @@
     note_text: What percentage of users did we pay for (vs organic)?
     title_hidden: true
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 13
     col: 0
@@ -881,7 +881,7 @@
     inner_radius: 60
     hidden_fields: []
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 20
     col: 4
@@ -969,7 +969,7 @@
     note_display: hover
     note_text: How long does it take to make $1? (for all users)
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 29
     col: 0
@@ -989,7 +989,7 @@
     down_color: "#03d7f4"
     total_color: "#00BCD4"
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 29
     col: 12
@@ -1046,7 +1046,7 @@
     down_color: "#03d7f4"
     total_color: "#00BCD4"
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 29
     col: 16
@@ -1070,7 +1070,7 @@
     note_display: hover
     note_text: Average daily new players
     listen:
-      対象範囲: events.event_date
+      Date Range: events.event_date
       Platform: events.device_platform
     row: 6
     col: 0
